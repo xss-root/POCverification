@@ -1,0 +1,10 @@
+author: W01fh4cker
+request:
+  -
+    method: GET
+    payload: /
+    # 自定义请求头，如果不填，则默认设置请求头只包含ua
+    headers:
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36
+    keyword: php
+    status: 200
